@@ -1,0 +1,43 @@
+<?xml version="1.0" standalone="yes"?>
+<myDataSet xmlns="NetFrameWork">
+  <myTable>
+    <id>0</id>
+    <item>item 0</item>
+  </myTable>
+  <myTable>
+    <id>1</id>
+    <item>item 1</item>
+  </myTable>
+  <myTable>
+    <id>2</id>
+    <item>item 2</item>
+  </myTable>
+  <myTable>
+    <id>3</id>
+    <item>item 3</item>
+  </myTable>
+  <myTable>
+    <id>4</id>
+    <item>item 4</item>
+  </myTable>
+  <myTable>
+    <id>5</id>
+    <item>item 5</item>
+  </myTable>
+  <myTable>
+    <id>6</id>
+    <item>item 6</item>
+  </myTable>
+  <myTable>
+    <id>7</id>
+    <item>item 7</item>
+  </myTable>
+  <myTable>
+    <id>8</id>
+    <item>item 8</item>
+  </myTable>
+  <myTable>
+    <id>9</id>
+    <item>item 9</item>
+  </myTable>
+</myDataSet>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="XMLSchema1" targetNamespace="http://tempuri.org/XMLSchema1.xsd" elementFormDefault="qualified"
+	xmlns="http://tempuri.org/XMLSchema1.xsd" xmlns:mstns="http://tempuri.org/XMLSchema1.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="Дом">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Подвал">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ПодвПомещение">
+								<xs:complexType>
+									<xs:sequence />
+									<xs:attribute name="НомерПомещения" type="xs:integer" />
+									<xs:attribute name="ПлощПодвПомещения" type="xs:float" />
+									<xs:attribute name="ВысотаПотолков" type="xs:float" />
+									<xs:attribute name="КоличОтопитПриборов" type="xs:integer" />
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="ДлинаХолТруб" type="xs:float" />
+						<xs:attribute name="ДлинаГорТруб" type="xs:float" />
+						<xs:attribute name="ДиаметрХолТруб" type="xs:float" />
+						<xs:attribute name="ДиаметрГорТруб" type="xs:float" />
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Чердак">
+					<xs:complexType>
+						<xs:sequence></xs:sequence>
+						<xs:attribute name="КоличВходов" type="xs:integer" />
+						<xs:attribute name="ПлощЧерд" type="xs:float" />
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Подъезд">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Этаж">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Квартира">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Комната">
+														<xs:complexType>
+															<xs:sequence />
+															<xs:attribute name="НомерКомнаты" type="xs:integer" />
+															<xs:attribute name="ПлощьКомнаты" type="xs:float" />
+															<xs:attribute name="ВысотаПотолков" type="xs:float" />
+															<xs:attribute name="КоличОтопитПриборов" type="xs:integer" />
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+												<xs:attribute name="НомерКвартиры" type="xs:integer" />
+												<xs:attribute name="ОбщаяПлощадь" type="xs:float" />
+												<xs:attribute name="ПлощЖилыхПомещ" type="xs:float" />
+												<xs:attribute name="НаличиеКолонки" type="xs:boolean" />
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="НомерЭтажа" type="xs:integer" />
+									<xs:attribute name="ПлощадьЛестничнКлетки" type="xs:float" />
+									<xs:attribute name="КоличЭлектрощитов" type="xs:integer" />
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="НомерПодъезда" type="xs:integer" />
+						<xs:attribute name="НаличДомофона" type="xs:boolean" />
+						<xs:attribute name="КоличОсветПриборов" type="xs:integer" />
+						<xs:attribute name="КоличествоОкон" type="xs:integer" />
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Крыша">
+					<xs:complexType>
+						<xs:sequence />
+						<xs:attribute name="ТипКровли" type="xs:string" />
+						<xs:attribute name="ПлощадьКровли" type="xs:float" />
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="Район" type="Строка20" />
+			<xs:attribute name="Улица" type="Строка20" />
+			<xs:attribute name="НомерДома" type="xs:integer" />
+		</xs:complexType>
+		<xs:key name="КлючЭтажа">
+			<xs:selector xpath=".//mstns:Этаж" />
+			<xs:field xpath="@НомерЭтажа" />
+		</xs:key>
+		<xs:key name="КлючПодъезда">
+			<xs:selector xpath=".//mstns:Подъезд" />
+			<xs:field xpath="@НомерПодъезда" />
+		</xs:key>
+		<xs:key name="КлючКвартиры">
+			<xs:selector xpath=".//mstns:Квартира" />
+			<xs:field xpath="@НомерКвартиры" />
+		</xs:key>
+		<xs:key name="КлючКомнаты">
+			<xs:selector xpath=".//mstns:Комната" />
+			<xs:field xpath="@НомерКомнаты" />
+		</xs:key>
+		<xs:key name="КлючПодвПомещ">
+			<xs:selector xpath=".//mstns:ПодвПомещение" />
+			<xs:field xpath="@НомерПомещения" />
+		</xs:key>
+	</xs:element>
+	<xs:simpleType name="Строка20">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="20" />
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>
